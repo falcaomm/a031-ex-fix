@@ -1,7 +1,9 @@
 import React from "react";
-import CardVideo from "./components/CardVideo";
+import CardVideo from "./components/CardVideo/CardVideo";
 import "./styles.css";
 import Usuario from "./midia/usuario.png"
+import { GlobalStyle } from "./GlobalStyle/GlobalStyle";
+import { HeaderEstilo, MainEstilo, MenuLateral, TelaInteira, PainelVideos, FooterEstilo } from "./style";
 
 export default function App() {
 
@@ -78,26 +80,27 @@ export default function App() {
   }
 
   return (
-    <div>
-      <div className="tela-inteira">
-        <header>
+    <>
+      <GlobalStyle/>
+      <TelaInteira>
+        <HeaderEstilo>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </HeaderEstilo>
 
-        <main>
-          <nav className="menu-vertical">
+        <MainEstilo>
+          <MenuLateral>
             <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
+              <li>Início</li>
+              <li>Em alta</li>
+              <li>Inscrições</li>
               <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
+              <li>Originais</li>
+              <li>Histórico</li>
             </ul>
-          </nav>
+          </MenuLateral>
 
-          <section className="painel-de-videos">
+          <PainelVideos>
             <CardVideo
               video={video1}
             />
@@ -122,13 +125,13 @@ export default function App() {
             <CardVideo 
             video = {video8}
             />
-          </section>
-        </main>
+          </PainelVideos>
+        </MainEstilo>
 
-        <footer>
+        <FooterEstilo>
           <h4>Oi! Eu moro no footer!</h4>
-        </footer>
-      </div>
-    </div>
+        </FooterEstilo>
+      </TelaInteira>
+    </>
   );
 }

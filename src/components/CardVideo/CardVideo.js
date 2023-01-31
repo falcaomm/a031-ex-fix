@@ -1,5 +1,6 @@
 import React from "react";
-import InfosUsuario from "./InfosUsuario";
+import InfosUsuario from "../InfosUsuario/InfosUsuario";
+import { BoxVideo, Imgvideo} from "./style";
 
 
 export default function CardVideo(props) {
@@ -8,12 +9,12 @@ export default function CardVideo(props) {
     }
 
     return (
-        <div className="box-pagina-principal" onClick={reproduzVideo}>
-        <img src={props.video.img} />
+        <BoxVideo onClick={reproduzVideo}>
+        <Imgvideo src={props.video.img} />
             <h4>{props.video.titulo}</h4>
             <InfosUsuario 
             usuario = {props.video.usuario}
             />
-        </div>
+        </BoxVideo>
     )
 }
